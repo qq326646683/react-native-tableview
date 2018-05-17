@@ -248,6 +248,10 @@ class TableView extends React.Component {
     NativeModules.RNTableViewManager.scrollTo(findNodeHandle(this.tableView), x, y, animated)
   }
 
+  delAndReload() {
+    NativeModules.RNTableViewManager.delAndReload(findNodeHandle(this.tableView))
+  }
+
   _onScroll(event) {
     this.props.onScroll(event)
   }
@@ -292,7 +296,7 @@ class TableView extends React.Component {
       this.sections[data.selectedSection].items[data.selectedIndex].onChange
     ) {
       this.sections[data.selectedSection] &&
-        this.sections[data.selectedSection].items[data.selectedIndex].onChange(data)
+      this.sections[data.selectedSection].items[data.selectedIndex].onChange(data)
     }
 
     this.props.onChange(data)

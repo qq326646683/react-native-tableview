@@ -59,6 +59,7 @@
 @property(nonatomic, strong) UIFont *footerFont;
 @property(nonatomic, strong) UIColor *footerTextColor;
 
+
 @property(nonatomic, strong) UIColor *textColor;
 @property(nonatomic, strong) UIColor *tintColor;
 @property(nonatomic, strong) UIColor *selectedTextColor;
@@ -87,5 +88,6 @@
 - (void)stopRefreshing;
 - (void)startRefreshing;
 - (void)scrollToOffsetX:(CGFloat)x offsetY:(CGFloat)y animated:(BOOL)animated;
+- (void)delAndreloadData;
 
 @end

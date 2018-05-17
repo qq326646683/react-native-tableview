@@ -153,6 +153,8 @@ interface SectionProps {
 }
 
 interface ItemProps {
+  height?: any,
+  onChange?: any
   /**
    * This value will be returned on event callbacks
    */
@@ -195,6 +197,7 @@ interface ItemProps {
 }
 
 interface TableViewProps {
+  reactModuleForCell?: any
   style?: ViewStyle
   tableViewStyle?: TableViewStyle
   tableViewCellStyle?: TableViewCellStyle

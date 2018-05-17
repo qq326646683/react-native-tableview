@@ -288,4 +288,18 @@ RCT_EXPORT_METHOD(stopRefreshing:(nonnull NSNumber *)reactTag)
      }];
 }
 
+RCT_EXPORT_METHOD(delAndReload:(nonnull NSNumber *)reactTag)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+         RNTableView *tableView = viewRegistry[reactTag];
+
+         if ([tableView isKindOfClass:[RNTableView class]]) {
+             [tableView delAndreloadData];
+         } else {
+             RCTLogError(@"Cannot delAndReload: %@ (tag #%@) is not RNTableView", tableView, reactTag);
+         }
+     }];
+}
+
 @end
