@@ -588,6 +588,8 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
         
         self.onChange(newValue);
         
+        // 大帅
+        
         [_sections[indexPath.section][@"items"] removeObjectAtIndex:indexPath.row];
         [self.tableView reloadData];
     }
