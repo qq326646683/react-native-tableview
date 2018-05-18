@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0808A0331C67E9A60038993A /* RNReactModuleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0808A0321C67E9A60038993A /* RNReactModuleCell.m */; };
 		084AEF361C6B155900A0A569 /* RNAppGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 084AEF351C6B155900A0A569 /* RNAppGlobals.m */; };
+		244DD85420AE914500971016 /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 244DD85320AE914500971016 /* UIColor+ColorChange.m */; };
 		872545E11BAAC85D00889249 /* JSONDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 872545D61BAAC85D00889249 /* JSONDataSource.m */; };
 		872545E21BAAC85D00889249 /* RNCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 872545D81BAAC85D00889249 /* RNCellView.m */; };
 		872545E31BAAC85D00889249 /* RNCellViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 872545DA1BAAC85D00889249 /* RNCellViewManager.m */; };
@@ -38,6 +39,8 @@
 		0808A0321C67E9A60038993A /* RNReactModuleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNReactModuleCell.m; sourceTree = "<group>"; };
 		084AEF341C6B155900A0A569 /* RNAppGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAppGlobals.h; sourceTree = "<group>"; };
 		084AEF351C6B155900A0A569 /* RNAppGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNAppGlobals.m; sourceTree = "<group>"; };
+		244DD85220AE914500971016 /* UIColor+ColorChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
+		244DD85320AE914500971016 /* UIColor+ColorChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
 		872545D51BAAC85D00889249 /* JSONDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDataSource.h; sourceTree = "<group>"; };
 		872545D61BAAC85D00889249 /* JSONDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONDataSource.m; sourceTree = "<group>"; };
 		872545D71BAAC85D00889249 /* RNCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCellView.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				8799E1E21BF117F600AF9A67 /* RNTableHeaderView.m */,
 				8799E1E41BF1181400AF9A67 /* RNTableHeaderViewManager.h */,
 				8799E1E51BF1181400AF9A67 /* RNTableHeaderViewManager.m */,
+				244DD85220AE914500971016 /* UIColor+ColorChange.h */,
+				244DD85320AE914500971016 /* UIColor+ColorChange.m */,
 			);
 			path = RNTableView;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				8799E1E61BF1181400AF9A67 /* RNTableHeaderViewManager.m in Sources */,
 				872545E61BAAC85D00889249 /* RNTableViewManager.m in Sources */,
 				872545E11BAAC85D00889249 /* JSONDataSource.m in Sources */,
+				244DD85420AE914500971016 /* UIColor+ColorChange.m in Sources */,
 				084AEF361C6B155900A0A569 /* RNAppGlobals.m in Sources */,
 				872545E41BAAC85D00889249 /* RNTableView.m in Sources */,
 			);

@@ -1,34 +1,41 @@
 {
-  "name": "react-native-tableview",
-  "version": "2.1.0",
-  "description": "Native iOS TableView wrapper for React Native",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "scripts": {
-    "lint": "eslint **/*.js"
-  },
-  "repository": {
+  "_from": "git+https://github.com/qq326646683/react-native-tableview.git",
+  "_id": "react-native-tableview@2.1.2",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-tableview",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "git+https://github.com/aksonov/react-native-tableview.git"
+    "raw": "react-native-tableview@git+https://github.com/qq326646683/react-native-tableview.git",
+    "name": "react-native-tableview",
+    "escapedName": "react-native-tableview",
+    "rawSpec": "git+https://github.com/qq326646683/react-native-tableview.git",
+    "saveSpec": "git+https://github.com/qq326646683/react-native-tableview.git",
+    "fetchSpec": "https://github.com/qq326646683/react-native-tableview.git",
+    "gitCommittish": null
   },
-  "keywords": ["react-native", "react-component", "UITableView", "tableview", "iOS"],
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/qq326646683/react-native-tableview.git#a1d5f390d2854a19d8b40bc4b51e969546ede0f1",
+  "_spec": "react-native-tableview@git+https://github.com/qq326646683/react-native-tableview.git",
+  "_where": "/Users/nell/nell_pro/rn/react-native-smallworld",
   "author": {
     "name": "Pavlo Aksonov",
     "email": "akso.nov@gmail.com",
     "url": "http://aksonov.com"
   },
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/aksonov/react-native-tableview/issues"
   },
-  "homepage": "https://github.com/aksonov/react-native-tableview#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "prop-types": "^15.6.0"
   },
-  "peerDependencies": {
-    "react": ">=15.1 || >=16.0.0",
-    "react-native": ">=0.40"
-  },
+  "deprecated": false,
+  "description": "Native iOS TableView wrapper for React Native",
   "devDependencies": {
     "babel-eslint": "^8.0.2",
     "eslint": "^4.9.0",
@@ -41,5 +48,29 @@
     "prettier-eslint": "^8.2.1",
     "react": "16.0.0",
     "react-native": "^0.50.3"
-  }
+  },
+  "homepage": "https://github.com/aksonov/react-native-tableview#readme",
+  "keywords": [
+    "react-native",
+    "react-component",
+    "UITableView",
+    "tableview",
+    "iOS"
+  ],
+  "license": "ISC",
+  "main": "src/index.js",
+  "name": "react-native-tableview",
+  "peerDependencies": {
+    "react": ">=15.1 || >=16.0.0",
+    "react-native": ">=0.40"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aksonov/react-native-tableview.git"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js"
+  },
+  "types": "src/index.d.ts",
+  "version": "2.1.2"
 }
