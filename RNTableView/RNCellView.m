@@ -15,7 +15,10 @@
     _tableView = tableView;
     _tableViewCell = [[RNTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CustomCell"];
     _tableViewCell.cellView = self;
+    
+
 }
+
 
 -(void)setComponentHeight:(float)componentHeight {
     _componentHeight = componentHeight;

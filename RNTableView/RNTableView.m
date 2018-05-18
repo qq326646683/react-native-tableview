@@ -16,7 +16,9 @@
 #import "RNTableFooterView.h"
 #import "RNTableHeaderView.h"
 #import "RNReactModuleCell.h"
-
+#import "UIColor+ColorChange.h"
+#define APP_WIDTH [[UIScreen mainScreen]applicationFrame].size.width
+#define APP_HEIGHT [[UIScreen mainScreen]applicationFrame].size.height
 @interface RNTableView()<UITableViewDataSource, UITableViewDelegate> {
     id<RNTableViewDatasource> datasource;
 }
@@ -219,6 +221,8 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     _tableView.separatorColor = self.separatorColor;
     _tableView.scrollEnabled = self.scrollEnabled;
     _tableView.editing = self.editing;
+    _tableView.sectionIndexBackgroundColor = UIColor.clearColor;
+    _tableView.sectionIndexColor = [UIColor colorWithHexString:@"#454545"];
     _reactModuleCellReuseIndentifier = @"ReactModuleCell";
     [_tableView registerClass:[RNReactModuleCell class] forCellReuseIdentifier:_reactModuleCellReuseIndentifier];
     [self addSubview:_tableView];
@@ -285,7 +289,7 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-
+    header.backgroundView.backgroundColor = [UIColor whiteColor];
     if (self.headerTextColor){
         header.textLabel.textColor = self.headerTextColor;
     }
@@ -484,9 +488,9 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     if ([item[@"transparent"] intValue]) {
         cell.backgroundColor = [UIColor clearColor];
     }
-    if (item[@"selectionStyle"]) {
-        cell.selectionStyle = [item[@"selectionStyle"] intValue];
-    }
+//    if (item[@"selectionStyle"]) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;// [item[@"selectionStyle"] intValue];
+//    }
     return cell;
 }
 
@@ -578,8 +582,8 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath { //implement the delegate method
-
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // 自定义delete后，这里失效
         NSMutableDictionary *newValue = [self dataForRow:indexPath.item section:indexPath.section];
         newValue[@"target"] = self.reactTag;
         newValue[@"selectedIndex"] = [NSNumber numberWithInteger:indexPath.item];
@@ -587,8 +591,6 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
         newValue[@"mode"] = @"delete";
 
         self.onChange(newValue);
-
-        // 大帅999
         _currentIndexPath = indexPath;
 
     }
@@ -603,6 +605,45 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView
           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return self.tableViewCellEditingStyle;
+}
+
+// 修改编辑按钮文字
+//- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return @"删除";
+//}
+
+//自定义delete样式
+- (NSArray*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    NSString *deleteText;
+    if([self.language isEqualToString:@"en"]){
+        deleteText = @"DEL";
+    }else if([self.language isEqualToString:@"zh"]){
+        deleteText = @"删除";
+    }else {
+        deleteText = @"默认Del";
+    }
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:NSLocalizedString(deleteText, @"") handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        
+        [tableView setEditing:NO animated:YES];
+        
+        //点击事件
+        NSMutableDictionary *newValue = [self dataForRow:indexPath.item section:indexPath.section];
+        newValue[@"target"] = self.reactTag;
+        newValue[@"selectedIndex"] = [NSNumber numberWithInteger:indexPath.item];
+        newValue[@"selectedSection"] = [NSNumber numberWithInteger:indexPath.section];
+        newValue[@"mode"] = @"delete";
+    
+        self.onChange(newValue);
+    
+        _currentIndexPath = indexPath;
+        
+        
+    }];
+    
+    deleteAction.backgroundColor = [UIColor colorWithHexString:@"#F94C62"];
+    
+    return @[deleteAction];
 }
 
 -(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{

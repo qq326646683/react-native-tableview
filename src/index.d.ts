@@ -197,6 +197,7 @@ interface ItemProps {
 }
 
 interface TableViewProps {
+  language?: any
   reactModuleForCell?: any
   style?: ViewStyle
   tableViewStyle?: TableViewStyle
@@ -228,9 +229,9 @@ interface TableViewProps {
   selectedValue?: string | number
   json?: string
   filter?: string
-  contentInset?: EdgeInsetsPropType
-  contentOffset?: PointPropType
-  scrollIndicatorInsets?: EdgeInsetsPropType
+  contentInset?: any //EdgeInsetsPropType
+  contentOffset?: any //PointPropType
+  scrollIndicatorInsets?: any //EdgeInsetsPropType
   textColor?: string
   detailTextColor?: string
   tintColor?: string

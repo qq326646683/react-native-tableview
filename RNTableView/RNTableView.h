@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <React/RCTComponent.h>
+#import "UIColor+ColorChange.h"
 
 @class RCTBridge;
 
@@ -45,6 +46,7 @@
 @property(nonatomic, assign) BOOL showsVerticalScrollIndicator;
 @property(nonatomic, assign) BOOL canRefresh;
 @property(nonatomic, assign) BOOL refreshing;
+@property(nonatomic, assign) NSString *language;
 
 @property(nonatomic, assign) UITableViewStyle tableViewStyle;
 @property(nonatomic, assign) UITableViewCellStyle tableViewCellStyle;
