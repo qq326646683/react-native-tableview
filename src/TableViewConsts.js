@@ -1,5 +1,5 @@
-import { NativeModules } from 'react-native'
+import { NativeModules, Platform } from 'react-native'
 
-const RNTableViewConsts = NativeModules.RNTableViewManager.Constants
+const RNTableViewConsts = Platform.OS == 'ios' ? NativeModules.RNTableViewManager.Constants : null
 
 export default RNTableViewConsts

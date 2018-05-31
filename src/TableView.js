@@ -8,6 +8,7 @@ import {
   PointPropType,
   findNodeHandle,
   View,
+  Platform
 } from 'react-native'
 import TableViewSection from './TableViewSection'
 import TableViewCell from './TableViewCell'
@@ -102,10 +103,10 @@ class TableView extends React.Component {
   }
 
   static defaultProps = {
-    tableViewStyle: RNTableViewConsts.Style.Plain,
-    tableViewCellStyle: RNTableViewConsts.CellStyle.Subtitle,
-    tableViewCellEditingStyle: RNTableViewConsts.CellEditingStyle.Delete,
-    separatorStyle: RNTableViewConsts.SeparatorStyle.None,
+    tableViewStyle: Platform.OS == 'ios' ? RNTableViewConsts.Style.Plain : null,
+    tableViewCellStyle: Platform.OS == 'ios' ? RNTableViewConsts.CellStyle.Subtitle : null,
+    tableViewCellEditingStyle: Platform.OS == 'ios' ? RNTableViewConsts.CellEditingStyle.Delete: null,
+    separatorStyle: Platform.OS == 'ios' ? RNTableViewConsts.SeparatorStyle.None : null,
     autoFocusAnimate: true,
     autoFocus: false,
     alwaysBounceVertical: true,
