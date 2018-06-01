@@ -205,6 +205,7 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:_tableViewStyle];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.decelerationRate = UIScrollViewDecelerationRateFast;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.allowsMultipleSelectionDuringEditing = NO;
     _tableView.contentInset = self.contentInset;
