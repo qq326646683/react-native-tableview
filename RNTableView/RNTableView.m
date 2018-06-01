@@ -210,7 +210,7 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     _tableView.allowsMultipleSelectionDuringEditing = NO;
     _tableView.contentInset = self.contentInset;
     _tableView.contentOffset = self.contentOffset;
-    _tableView.scrollIndicatorInsets = self.scrollIndicatorInsets;
+    _tableView.scrollIndicatorInsets = 0.1;
     _tableView.showsHorizontalScrollIndicator = self.showsHorizontalScrollIndicator;
     _tableView.showsVerticalScrollIndicator = self.showsVerticalScrollIndicator;
     _tableView.backgroundColor = [UIColor clearColor];
