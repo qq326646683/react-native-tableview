@@ -1,6 +1,6 @@
 {
   "_from": "git+https://github.com/qq326646683/react-native-tableview.git",
-  "_id": "react-native-tableview@2.1.2",
+  "_id": "react-native-tableview@2.2.0",
   "_inBundle": false,
   "_integrity": "",
   "_location": "/react-native-tableview",
@@ -72,5 +72,5 @@
     "lint": "eslint **/*.js"
   },
   "types": "src/index.d.ts",
-  "version": "2.1.2"
+  "version": "2.2.0"
 }
