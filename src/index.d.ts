@@ -266,6 +266,11 @@ interface TableViewProps {
   onEndDisplayingCell?(event: DisplayCallBack): void
 }
 
+interface HeaderFooterProps {
+  componentWidth?: number,
+  componentHeight?: number
+}
+
 declare class TableView extends React.Component<TableViewProps> {}
 
 declare namespace TableView {
@@ -273,6 +278,8 @@ declare namespace TableView {
   class Section extends React.Component<SectionProps> {}
   class Item extends React.Component<ItemProps> {}
   class Cell extends React.Component<ItemProps> {}
+  class Header extends React.Component<HeaderFooterProps> {}
+  class Footer extends React.Component<HeaderFooterProps> {}
 }
 
 export default TableView
