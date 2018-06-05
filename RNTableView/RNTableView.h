@@ -90,6 +90,7 @@
 - (void)stopRefreshing;
 - (void)startRefreshing;
 - (void)scrollToOffsetX:(CGFloat)x offsetY:(CGFloat)y animated:(BOOL)animated;
+- (void)scrollToIndex:(NSInteger)index section:(NSInteger)section animated:(BOOL)animated;
 - (void)delAndreloadData;
 
 @end

@@ -303,4 +303,21 @@ RCT_EXPORT_METHOD(delAndReload:(nonnull NSNumber *)reactTag)
      }];
 }
 
+RCT_EXPORT_METHOD(scrollToIndex:(nonnull NSNumber *)reactTag
+                  index:(NSInteger)index
+                  section:(NSInteger)section
+                  animated:(BOOL)animated)
+{
+    [self.bridge.uiManager addUIBlock:
+     ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
+         RNTableView *tableView = viewRegistry[reactTag];
+
+         if ([tableView isKindOfClass:[RNTableView class]]) {
+             [tableView scrollToIndex:index section:section animated:animated];
+         } else {
+             RCTLogError(@"Cannot scrollToIndex: %@ (tag #%@) is not RNTableView", tableView, reactTag);
+         }
+     }];
+}
+
 @end

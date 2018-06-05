@@ -251,6 +251,10 @@ class TableView extends React.Component {
     NativeModules.RNTableViewManager.scrollTo(findNodeHandle(this.tableView), x, y, animated)
   }
 
+  scrollToIndex({ index, section = 0, animated = true }) {
+    NativeModules.RNTableViewManager.scrollToIndex(findNodeHandle(this.tableView), index, section, animated)
+  }
+
   delAndReload() {
     NativeModules.RNTableViewManager.delAndReload(findNodeHandle(this.tableView))
   }

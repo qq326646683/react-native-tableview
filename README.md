@@ -137,6 +137,35 @@ Checkamrk can also be applied by adding the `selected` prop on the Item.
 For a full list of props on all components check out
 [the typescript definitions file](./src/index.d.ts).
 
+### Methods
+
+#### `scrollTo()`
+
+Scrolls to a set of coordinates on the tableview.
+
+```ts
+/**
+  * @param x Horizontal pixels to scroll
+  * @param y Vertical pixels to scroll
+  * @param animated With animation or not
+  */
+  scrollTo(x: number, y: number, animated: boolean): void;
+```
+
+#### `scrollToIndex()`
+
+Scroll to an item in a section
+
+```ts
+/**
+  * @param params scroll params
+  * @param params.index index of the cell
+  * @param params.section index of the section @default 0
+  * @param params.animated scroll with animation @default true
+  */
+  scrollToIndex(params: { index: number, section?: number, animated?: boolean }): void;
+```
+
 ### List item format
 
 Items in the list can be either `TableView.Item` or `TableView.Cell`. An `Item`
