@@ -224,6 +224,9 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     _tableView.editing = self.editing;
     _tableView.sectionIndexBackgroundColor = UIColor.clearColor;
     _tableView.sectionIndexColor = [UIColor colorWithHexString:@"#454545"];
+    _tableView.estimatedRowHeight = 0;
+    _tableView.estimatedSectionFooterHeight = 0;
+    _tableView.estimatedSectionHeaderHeight = 0;
     _reactModuleCellReuseIndentifier = @"ReactModuleCell";
     [_tableView registerClass:[RNReactModuleCell class] forCellReuseIdentifier:_reactModuleCellReuseIndentifier];
     [self addSubview:_tableView];
@@ -630,27 +633,27 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
     }else {
         deleteText = @"默认Del";
     }
-    
+
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:NSLocalizedString(deleteText, @"") handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        
+
         [tableView setEditing:NO animated:YES];
-        
+
         //点击事件
         NSMutableDictionary *newValue = [self dataForRow:indexPath.item section:indexPath.section];
         newValue[@"target"] = self.reactTag;
         newValue[@"selectedIndex"] = [NSNumber numberWithInteger:indexPath.item];
         newValue[@"selectedSection"] = [NSNumber numberWithInteger:indexPath.section];
         newValue[@"mode"] = @"delete";
-    
+
         self.onChange(newValue);
-    
+
         _currentIndexPath = indexPath;
-        
-        
+
+
     }];
-    
+
     deleteAction.backgroundColor = [UIColor colorWithHexString:@"#F94C62"];
-    
+
     return @[deleteAction];
 }
 
